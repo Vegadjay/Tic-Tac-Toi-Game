@@ -2,6 +2,7 @@ let firstName = prompt("Enter First Player Name");
 let secondName = prompt("Enter Second Player Name");
 let choice = prompt("Choose Your Sign If you Choose Cross than enter 1 and If you choose Zero Than enter 2"
 );
+var turnId = document.getElementById("tunr1");
 var scoreup = 0;
 var scoreup1 = 0;
 var fpname = document.getElementById("first-player-name");
@@ -47,11 +48,13 @@ for (let i = 0; i <= btn.length - 1; i++) {
       isZero = true;
       btn[i].innerText = "X";
       btn[i].disabled = true;
+      turnId.innerHTML = `${spname}'s Turn`;
     } else if (isZero == true) {
       isZero = false;
       isCross = true;
       btn[i].innerText = "O";
       btn[i].disabled = true;
+      turnId.innerHTML = `${fpname}'s Turn`;
     } else {
       console.log("Happy Ending");
     }
